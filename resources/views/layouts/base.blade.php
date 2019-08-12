@@ -14,8 +14,11 @@
 		<title>{{ config('app.name', 'Error') }}</title>
 	</head>
 	<body>
-		@include('inc.navbar')
-		@yield('content')
+		<div class="wrapper">
+			@include('inc.navbar')
+			@yield('content')
+			@include('inc.footer')
+		</div>
 
 	    <!-- <script src="{{ URL::asset('js/materialize.min.js') }}"></script> -->
 	</body>
