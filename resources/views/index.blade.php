@@ -1,5 +1,8 @@
 @extends('layouts.base')
 
 @section('content')
-	<p>test</p>
+	<div class="materialize-red">
+			<p>test</p>
+
+	</div>
 @endsection
