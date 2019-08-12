@@ -12,7 +12,8 @@ body {
 }
 
 .nav-wrapper {
-	padding-bottom: 30px;
+	padding-top: 5px;
+	padding-bottom: 20px;
 }
 
 .nav-wrapper ul {
@@ -60,6 +61,7 @@ body {
 .main {
 	background-color: white;
 	display: inline-block;
+	margin-bottom: 20px;
 }
 
 .content {
@@ -72,4 +74,9 @@ body {
 	padding: 10px;
 	float: right;
 	width:25%;
+}
+
+.footer-wrapper p {
+	color: #404040;
+	text-align: center;
 }
