@@ -15,4 +15,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/portfolio', 'PagesController@portfolio');
 Route::get('/contact', 'PagesController@contact');
-Route::get('/blog', 'PagesController@blog');
+
+Route::get('/projects', 'PagesController@projects');
+Route::get('/academia', 'PagesController@academia');
+Route::get('/fitness', 'PagesController@fitness');
