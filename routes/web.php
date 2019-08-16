@@ -15,6 +15,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/portfolio', 'PagesController@portfolio');
 Route::get('/contact', 'PagesController@contact');
+Route::post('/contact', 'PagesController@email');
 
 Route::get('/projects', 'PagesController@projects');
 Route::get('/academia', 'PagesController@academia');

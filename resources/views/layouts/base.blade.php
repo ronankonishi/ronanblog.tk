@@ -20,6 +20,11 @@
 			@include('inc.footer')
 		</div>
 
+		<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+		<script>
+			CKEDITOR.replace( 'article-ckeditor' );
+    	</script>
+
 	    <!-- <script src="{{ URL::asset('js/materialize.min.js') }}"></script> -->
 	</body>
 </html>

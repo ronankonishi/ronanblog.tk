@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\OrderShipped;
+use Illuminate\Support\Facades\Mail;
+
 
 class PagesController extends Controller
 {
@@ -44,6 +47,11 @@ class PagesController extends Controller
     function fitness() {
         $title = 'Fitness';
         return view('pages.blog.fitness')->with('title', $title);
+    }
+
+    function email(Request $request) {
+        Mail::send(new OrderShipped($request));
+        return redirect('/');
     }
 
 }
