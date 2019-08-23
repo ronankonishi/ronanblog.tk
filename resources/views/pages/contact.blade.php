@@ -10,19 +10,16 @@
 
 				{{ csrf_field() }}
 				<p class="label">Name:</p>
-				{{Form::text('title', '', ['placeholder' => 'Enter...'])}}
+				{{Form::text('name', '', ['placeholder' => 'Enter...'])}}
 
 				<p class="label">Email:</p>
-				{{Form::text('title', '', ['placeholder' => 'Enter...'])}}
+				{{Form::text('email', '', ['placeholder' => 'Enter...'])}}
 
 				<p class="label">Subject:</p>
-				{{Form::select('options', ['opt1' => 'Opt1', 'opt2' => 'Opt2'])}}
+				{{Form::select('subject', ['opt1' => 'Opt1', 'opt2' => 'Opt2'])}}
 
 				<p class="label">Message:</p>
-				{{Form::textarea('body', '', ['id' => 'article-ckeditor', 'placeholder' => ''])}}
-
-				<p class="label">Attachment:</p>
-				{{Form::file('file')}}
+				{{Form::textarea('message', '', ['id' => 'article-ckeditor', 'placeholder' => ''])}}
 
 				<br>
 				<div class="submit-btn-container">

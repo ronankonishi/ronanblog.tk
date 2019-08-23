@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Http\Request;
 
 
-class OrderShipped extends Mailable
+class ContactEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -20,9 +20,9 @@ class OrderShipped extends Mailable
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct($email)
     {
-        $this->email = $request;
+        $this->email = $email;
     }
 
     /**
@@ -32,9 +32,10 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->subject('New Contact Mail')
-                    ->from('iam@gmail.com')
-                    ->to('test@gmail.com')
-                    ->view('pages.contact');
+        return $this->subject($this->email['subject'])
+                    ->from($this->email['email'])
+                    ->to(\Config::get('mail.reply_to.address'))
+                    ->view('emails.temp')
+                    ->with('email', $this->email);
     }
 }

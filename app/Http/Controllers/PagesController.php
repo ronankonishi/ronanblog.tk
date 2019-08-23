@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mail\OrderShipped;
+use App\Mail\ContactEmail;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -50,8 +50,16 @@ class PagesController extends Controller
     }
 
     function email(Request $request) {
-        Mail::send(new OrderShipped($request));
-        return redirect('/');
+
+        $email = [
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'subject' => $request->input('subject'),
+            'message' => $request->input('message')
+        ];
+
+        Mail::send(new ContactEmail($email));
+        return back()->with('success', 'Thanks for contacting us!');
     }
 
 }
