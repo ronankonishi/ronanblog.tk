@@ -3,6 +3,10 @@ body {
 	/*background-color: grey;*/
 }
 
+a {
+	text-decoration: none;
+}
+
 .wrapper {
 	min-width: 900px;
 	max-width: 1100px;
@@ -96,7 +100,7 @@ body {
 
 .main {
 	background-color: white;
-	display: inline-block;
+	display: block;
 	margin-bottom: 20px;
 	padding: 0 50px;
 }
@@ -109,13 +113,13 @@ body {
 	color: #545454;
 }
 
-.main a {
+.portfolio a {
 	color: #7e7e7e;
 	text-decoration: underline;
 	font-style: italic;
 }
 
-.main a:hover{
+.portfolio a:hover{
 	color: #111;
 }
 
@@ -158,6 +162,14 @@ body {
 
 .portfolio .content {
 	padding-left: 10px;
+}
+
+.projects .post {
+	padding: 10px 30px;
+}
+
+.projects .post:hover {
+	background-color: #F8F8F8;
 }
 
 .contact p.label {

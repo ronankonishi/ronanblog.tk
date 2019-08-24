@@ -34,11 +34,6 @@ class PagesController extends Controller
     	return view('pages.contact')->with('title', $title);
     }
 
-    function projects() {
-        $title = 'Projects';
-        return view('pages.blog.projects')->with('title', $title);
-    }
-
     function academia() {
         $title = 'Academia';
         return view('pages.blog.academia')->with('title', $title);
