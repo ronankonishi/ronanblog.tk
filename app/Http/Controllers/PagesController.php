@@ -34,16 +34,6 @@ class PagesController extends Controller
     	return view('pages.contact')->with('title', $title);
     }
 
-    function academia() {
-        $title = 'Academia';
-        return view('pages.blog.academia')->with('title', $title);
-    }
-
-    function fitness() {
-        $title = 'Fitness';
-        return view('pages.blog.fitness')->with('title', $title);
-    }
-
     function email(Request $request) {
 
         $email = [

@@ -17,7 +17,4 @@ Route::get('/portfolio', 'PagesController@portfolio');
 Route::get('/contact', 'PagesController@contact');
 Route::post('/contact', 'PagesController@email');
 
-Route::resource('/projects', 'ProjectPostsController');
-
-Route::get('/academia', 'PagesController@academia');
-Route::get('/fitness', 'PagesController@fitness');
+Route::resource('/posts', 'PostsController');

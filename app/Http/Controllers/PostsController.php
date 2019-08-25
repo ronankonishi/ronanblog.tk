@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ProjectPost;
+use App\Post;
 
-class ProjectPostsController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,10 @@ class ProjectPostsController extends Controller
      */
     public function index()
     {
+        $title = 'Blog';
         $posts_per_page = 5;
-        $posts = ProjectPost::orderBy('created_at', 'desc')->paginate($posts_per_page);
-        return view('posts.projects.index')->with('posts', $posts);
+        $posts = Post::orderBy('created_at', 'desc')->paginate($posts_per_page);
+        return view('posts.index')->with('posts', $posts)->with('title', $title);
     }
 
     /**
@@ -26,7 +27,7 @@ class ProjectPostsController extends Controller
      */
     public function create()
     {
-        return view('posts.projects.create');
+        return view('posts.create');
     }
 
     /**
@@ -41,13 +42,13 @@ class ProjectPostsController extends Controller
             'title' => 'required',
             'body' => 'required'
         ]);
-        
-        $post = new ProjectPost;
+
+        $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();
 
-        return redirect('/projects')->with('success', 'Post submitted');
+        return redirect('/posts')->with('success', 'Post submitted');
     }
 
     /**
@@ -58,8 +59,10 @@ class ProjectPostsController extends Controller
      */
     public function show($id)
     {
-        $post = ProjectPost::find($id);
-        return view('posts.projects.show')->with('post', $post);
+        $post = Post::find($id);
+        $title = 'Blog';
+
+        return view('posts.show')->with('post', $post)->with('title', $title);
     }
 
     /**
@@ -70,8 +73,8 @@ class ProjectPostsController extends Controller
      */
     public function edit($id)
     {
-        $post = ProjectPost::find($id);
-        return view('posts.projects.edit')->with('post', $post);
+        $post = Post::find($id);
+        return view('posts.edit')->with('post', $post);
     }
 
     /**
@@ -88,12 +91,12 @@ class ProjectPostsController extends Controller
             'body' => 'required'
         ]);
         
-        $post = ProjectPost::find($id);
+        $post = Post::find($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();
 
-        return redirect('/projects')->with('success', 'Post Updated');
+        return redirect('/posts')->with('success', 'Post Updated');
     }
 
     /**
@@ -104,9 +107,9 @@ class ProjectPostsController extends Controller
      */
     public function destroy($id)
     {
-        $post = ProjectPost::find($id);
+        $post = Post::find($id);
         $post->delete();
 
-        return redirect('/projects')->with('success', 'Post Removed');
+        return redirect('/posts')->with('success', 'Post Removed');
     }
 }

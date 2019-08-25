@@ -1,8 +1,8 @@
-@extends('layouts.base')
+@extends('layouts.api')
 
 @section('content')
 	<h1>Edit Post</h1>
-		{{Form::open(['action' => ['ProjectPostsController@update', $post->id], 'method' => 'POST'])}}
+		{{Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'POST'])}}
 
 				{{ csrf_field() }}
 

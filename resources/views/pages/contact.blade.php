@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="main contact">
-		<p>Got some feedback about my website? Feel free to shoot me an email below!</p>
+		<p>Got feedback? Feel free to shoot me an email below!</p>
 
 		<div>
 
@@ -16,14 +16,14 @@
 				{{Form::text('email', '', ['placeholder' => 'Enter...'])}}
 
 				<p class="label">Subject:</p>
-				{{Form::select('subject', ['opt1' => 'Opt1', 'opt2' => 'Opt2'])}}
+				{{Form::select('subject', ['opt1' => 'Feedback', 'opt2' => 'Questions', 'opt3' => 'Business'])}}
 
 				<p class="label">Message:</p>
 				{{Form::textarea('message', '', ['id' => 'article-ckeditor', 'placeholder' => ''])}}
 
 				<br>
 				<div class="submit-btn-container">
-					{{Form::submit('Submit', ['class' => 'submit-btn'])}}
+					{{Form::submit('Submit', ['class' => 'btn btn-dark'])}}
 				</div>
 
 			{{Form::close()}}

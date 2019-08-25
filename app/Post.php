@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProjectPost extends Model
+class Post extends Model
 {
-    protected $table = 'project_posts';
+    protected $table = 'posts';
 
     public $primaryKey = 'id';
 

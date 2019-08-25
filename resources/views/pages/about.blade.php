@@ -25,7 +25,7 @@
 
 
 		<h3>Other Passions</h3>
-		<p>Aside from developer life, I enjoy rock climbing, surfing, and playing basketball. I go indoor rock climbing several times a week, and occasionally go on outdoor climbing excursions. I plan to incorporate climbing into my weekly schedule when I return to college. UCSD is also the perfect place to surf with the amazing waves and weather!</p>
+		<p>Aside from my developer life, I enjoy rock climbing, surfing, and playing basketball. I go indoor rock climbing several times a week, and occasionally go on outdoor climbing excursions. I plan to incorporate climbing into my weekly schedule when I return to college. UCSD is also the perfect place to surf with the amazing waves and weather!</p>
 		<br>
 
 	</div>

@@ -13,7 +13,6 @@
 			<div class="inner-wrap">
 				<div class="nav-wrapper">
 					@include('inc.navbar')
-					@include('inc.banner')
 				</div>
 				@include('inc.messages')
 				@yield('content')
