@@ -16,9 +16,8 @@ class CreateProjectPostsTable extends Migration
         Schema::create('project_posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->date('date');
             $table->mediumText('body');
-            $table->timestamps();
+            $table->timestamps()->useCurrent();
         });
     }
 

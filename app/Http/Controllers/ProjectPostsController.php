@@ -14,7 +14,8 @@ class ProjectPostsController extends Controller
      */
     public function index()
     {
-        $posts = ProjectPost::all();
+        $posts_per_page = 5;
+        $posts = ProjectPost::orderBy('created_at', 'desc')->paginate($posts_per_page);
         return view('posts.projects.index')->with('posts', $posts);
     }
 
@@ -25,7 +26,7 @@ class ProjectPostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.projects.create');
     }
 
     /**
@@ -36,7 +37,17 @@ class ProjectPostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+        
+        $post = new ProjectPost;
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect('/projects')->with('success', 'Post submitted');
     }
 
     /**
@@ -47,7 +58,8 @@ class ProjectPostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = ProjectPost::find($id);
+        return view('posts.projects.show')->with('post', $post);
     }
 
     /**
@@ -58,7 +70,8 @@ class ProjectPostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = ProjectPost::find($id);
+        return view('posts.projects.edit')->with('post', $post);
     }
 
     /**
@@ -70,7 +83,17 @@ class ProjectPostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+        
+        $post = ProjectPost::find($id);
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect('/projects')->with('success', 'Post Updated');
     }
 
     /**
@@ -81,6 +104,9 @@ class ProjectPostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = ProjectPost::find($id);
+        $post->delete();
+
+        return redirect('/projects')->with('success', 'Post Removed');
     }
 }

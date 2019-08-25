@@ -7,11 +7,12 @@
 				<div class="post">
 					<a href="projects/{{$post->id}}">
 						<h3>{{$post->title}}</h3>
-						<p>{{$post->date}}</p>
-						<p>{{$post->body}}</p>
+						<p>{{$post->created_at}}</p>
+						<p>{!!$post->body!!}</p>
 					</a>
 				</div>
 			@endforeach
+			{{ $posts->links() }}
 		@else
 			<p>No Posts Found</p>
 		@endif
