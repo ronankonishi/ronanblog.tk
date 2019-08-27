@@ -192,10 +192,6 @@ hr {
 
 
 /*Portfolio*/
-.portfolio .content {
-	padding-top: 8px;
-	padding-bottom: 32px;
-}
 
 .portfolio a {
 	color: #7e7e7e;
@@ -206,6 +202,10 @@ hr {
 .portfolio a:hover{
 	color: #111;
 	text-decoration: underline !important;
+}
+
+.portfolio .content {
+	padding-left: 6px;
 }
 
 
@@ -235,10 +235,6 @@ hr {
 	font-style: italic;
 }
 
-.portfolio .content {
-	padding-left: 10px;
-}
-
 .posts .post {
 	padding: 10px 30px;
 }
@@ -248,9 +244,20 @@ hr {
 }
 
 .contact p.label {
-	color: #545454;
+	color: #707070;
 	margin: 15px 0 2px 0;
 	font-size: 15px;
+	font-weight: 600;
+}
+
+.contact .comment-container {
+	text-align: center;
+}
+
+.contact .comment-container .comment {
+	display: inline-block;
+	margin: 0;
+	font-size: 16px;
 }
 
 .contact .submit-btn-container {

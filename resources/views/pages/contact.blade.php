@@ -2,10 +2,11 @@
 
 @section('content')
 	<div class="main contact">
-		<p>Got feedback? Feel free to shoot me an email below!</p>
+		<div class="comment-container">
+			<p class="comment">Got feedback? Feel free to shoot me an email below!</p>
+		</div>
 
 		<div>
-
 			{{Form::open(['action' => 'PagesController@email', 'method' => 'POST', 'enctype'=> 'multipart/data', 'class' => 'content']) }}
 
 				{{ csrf_field() }}
@@ -27,7 +28,6 @@
 				</div>
 
 			{{Form::close()}}
-
 		</div>
 	</div>
 @endsection

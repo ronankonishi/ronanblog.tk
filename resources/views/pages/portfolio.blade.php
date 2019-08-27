@@ -2,12 +2,15 @@
 
 @section('content')
 	<div class="main portfolio">
-		<h3>Resume</h3>
+		<h5>Resume:</h5>
+		<hr>
 		<div class="content">
-			<a href="RESUME.pdf">Download my Resume</a>
+			<p><a href="RESUME.pdf">Download my Resume</a></p>
 		</div>
+		<br>
 
-		<h3>Coursework</h3>
+		<h5>Coursework:</h5>
+		<hr>
 		<div class="content">
 			<p>CSE 11. Introduction to Computer Science and Object-Oriented Programming: Java</p>
 			<p>CSE 12. Basic Data Structures and Object-Oriented Design</p>
@@ -22,21 +25,28 @@
 			<p>CSE 105. Theory of Computability (in progress)</p>
 			<p>MATH 18. Linear Algebra (in progress)</p>
 		</div>
+		<br>
 
 
-		<h3>Software Projects</h3>
+		<h5>Software Projects:</h5>
+		<hr>
 		<div class="content">
 			<p>Soon to Come...</p>
 		</div>
+		<br>
 
-		<h3>Engineering Projects</h3>
+		<h5>Engineering Projects:</h5>
+		<hr>
 		<div class="content">
 			<p>Soon to Come...</p>
 		</div>
+		<br>
 
-		<h3>Academic Research</h3>
+		<h5>Academic Research:</h5>
+		<hr>
 		<div class="content">
 			<p>Soon to Come...</p>
 		</div>
+		<br>
 	</div>
 @endsection
