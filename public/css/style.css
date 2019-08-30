@@ -53,6 +53,22 @@ hr {
 	margin-bottom: 8px !important;
 }
 
+.posts .post .subtitle-italics {
+	font-style: italic;
+	display: inline;
+	font-size: 14px;
+}
+
+.posts .post .subtitle-bar{
+	display: inline;
+	font-size: 13px;
+}
+
+.posts .post .subtitle {
+	display: inline;
+	font-size: 12px;
+}
+
 /*Page Wrapper*/
 .wrapper {
 	overflow: scroll;
@@ -103,8 +119,16 @@ hr {
 	font-size: 18px;
 }
 
-.nav-wrapper a:hover {
-	color: #787878;
+.posts a {
+	color: #303030
+}
+
+.posts a {
+	
+}
+
+a:hover {
+	color: #787878 !important;
 }
 
 .nav-wrapper ul li a:hover {
@@ -239,8 +263,17 @@ hr {
 	padding: 10px 30px;
 }
 
-.posts .post:hover {
-	background-color: #F8F8F8;
+.posts .pagination {
+	margin: 0 auto;
+}
+
+.pagination li a:focus {
+	box-shadow: none;
+}
+
+.pagination .active span {
+    background-color: black !important;
+    border-color: black !important;
 }
 
 .contact p.label {

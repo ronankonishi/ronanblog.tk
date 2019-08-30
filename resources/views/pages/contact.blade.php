@@ -17,7 +17,7 @@
 				{{Form::text('email', '', ['placeholder' => 'Enter...'])}}
 
 				<p class="label">Subject:</p>
-				{{Form::select('subject', ['opt1' => 'Feedback', 'opt2' => 'Questions', 'opt3' => 'Business'])}}
+				{{Form::select('subject', ['feedback' => 'Feedback', 'questions' => 'Questions', 'business' => 'Business'])}}
 
 				<p class="label">Message:</p>
 				{{Form::textarea('message', '', ['id' => 'article-ckeditor', 'placeholder' => ''])}}
