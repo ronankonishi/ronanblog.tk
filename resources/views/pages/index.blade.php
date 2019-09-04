@@ -6,7 +6,19 @@
 			<div>
 				<h5>Blog Article:</h5>
 				<hr>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<div class="post">
+					@if(isset($post))
+						<h3><a href="posts/{{$post->id}}">{{$post->title}}</a></h3>
+						<div class="subtitle-container">
+							<p class="subtitle-italics">{{$post->created_at->format('M. d, Y')}}</p> <p class="subtitle-bar"> |</p> <p class="subtitle">2 comments</p>
+						</div>
+						@if(strlen($post->body) > 200)
+							<p>{!! preg_replace('/\s+?(\S+)?$/', '', substr($post->body, 0, 400)) !!} . . .</p>
+						@else
+							<p>{!! $post->body !!}</p>
+						@endif
+					@endif
+				</div>
 			</div>
 		</div>
 

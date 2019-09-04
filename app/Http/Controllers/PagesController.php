@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\ContactEmail;
 use Illuminate\Support\Facades\Mail;
+use App\Post;
 
 
 class PagesController extends Controller
 {
     function index() {
     	$title = 'Welcome';
-    	return view('pages.index')->with('title', $title);
+        $post = Post::inRandomOrder()->get()->first();
+    	return view('pages.index', compact('title', 'post'));
     }
 
     function blog() {

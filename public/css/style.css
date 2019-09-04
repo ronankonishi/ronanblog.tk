@@ -53,18 +53,18 @@ hr {
 	margin-bottom: 8px !important;
 }
 
-.posts .post .subtitle-italics {
+.post .subtitle-italics {
 	font-style: italic;
 	display: inline;
 	font-size: 14px;
 }
 
-.posts .post .subtitle-bar{
+.post .subtitle-bar{
 	display: inline;
 	font-size: 13px;
 }
 
-.posts .post .subtitle {
+.post .subtitle {
 	display: inline;
 	font-size: 12px;
 }
@@ -119,12 +119,8 @@ hr {
 	font-size: 18px;
 }
 
-.posts a {
-	color: #303030
-}
-
-.posts a {
-	
+.post a {
+	color: #303030;
 }
 
 a:hover {

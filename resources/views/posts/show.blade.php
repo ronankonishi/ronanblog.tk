@@ -6,10 +6,12 @@
 		<h1>{{$post->title}}</h1>
 		<small>{{$post->date}}</small>
 		<p>{!!$post->body!!}</p>
-		<a href="/posts/{{$post->id}}/edit" class="btn btn-outline-secondary">Edit</a>
-		{{Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST'])}}
-			{{Form::hidden('_method', 'DELETE')}}
-			{{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-		{{Form::close()}}
+		@auth
+			<a href="/posts/{{$post->id}}/edit" class="btn btn-outline-secondary">Edit</a>
+			{{Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST'])}}
+				{{Form::hidden('_method', 'DELETE')}}
+				{{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+			{{Form::close()}}
+		@endauth
 	</div>
 @endsection
