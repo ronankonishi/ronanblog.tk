@@ -127,6 +127,15 @@ a:hover {
 	color: #787878 !important;
 }
 
+a.btn:hover {
+	color: white !important;
+}
+
+.btn-container {
+	 display: inline-block;
+	 float: right;
+}
+
 .nav-wrapper ul li a:hover {
 	background-color: #FBFBFB;
 }
@@ -212,7 +221,6 @@ a:hover {
 
 
 /*Portfolio*/
-
 .portfolio a {
 	color: #7e7e7e;
 	font-style: italic;
@@ -253,6 +261,16 @@ a:hover {
 .about .profile-container .subtitle p {
 	font-size: 8px;
 	font-style: italic;
+}
+
+.blog-short-container {
+	margin: 20px 0 2px 0;
+
+}
+
+.blog-short-container h3 {
+	font-weight: 600 !important;
+	font-size: 16px !important;
 }
 
 .posts .post {
