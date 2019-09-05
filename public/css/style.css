@@ -236,6 +236,40 @@ a.btn:hover {
 	padding-left: 6px;
 }
 
+.portfolio .project {
+	position: relative;
+	width: 200px;
+	height: 160px;
+	text-align: center;
+}
+
+.portfolio .project img {
+	width: 100%;
+	height: 100%;
+}
+
+.portfolio .project p.description {
+	margin: 1px;
+	position: absolute;
+	background-color: white;
+	opacity: 0.9;
+	top: 0;
+	transition: height .5s;
+	height: 0;
+	overflow: hidden;
+}
+
+.portfolio .project p.project-title {
+	position: absolute;
+	background-color: black;
+	color: white;
+	bottom: 0;
+	padding: 2px;
+	margin: 0;
+	width: 100%;
+	font-style: normal;
+}
+
 
 /*About*/
 .about .profile-container {

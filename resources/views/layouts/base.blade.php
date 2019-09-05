@@ -21,6 +21,8 @@
 			</div>
 		</div>
 
+		<script rel="javascript" src="{{ URL::asset('/js/script.js') }}"></script>
+
 		<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 		<script>
 			CKEDITOR.replace( 'article-ckeditor' );

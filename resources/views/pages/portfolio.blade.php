@@ -31,7 +31,14 @@
 		<h5>Software Projects:</h5>
 		<hr>
 		<div class="content">
-			<p>Soon to Come...</p>
+			<a href="">
+				<div class="project" onmouseover="growParagraph()" onmouseout="shrinkParagraph()" style="background-color: blue;">
+				<img src="img/back.jpg">
+				<p class="description"><b>2018-2019</b><br>Tricorder database for competition</p>
+				<p class="project-title">Tricorder</p>
+
+				</div>
+			</a>
 		</div>
 		<br>
 
