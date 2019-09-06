@@ -26,11 +26,6 @@ class PagesController extends Controller
     	return view('pages.about')->with('title', $title);
     }
 
-    function portfolio() {
-    	$title = 'Portfolio';
-    	return view('pages.portfolio')->with('title', $title);
-    }
-
     function contact() {
     	$title = 'Contact';
     	return view('pages.contact')->with('title', $title);
