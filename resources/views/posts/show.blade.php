@@ -5,9 +5,14 @@
 		<a href="/posts" class="btn btn-outline-secondary btn-sm">&lt</a>
 		<br>
 		<br>
-		<h1>{{$post->title}}</h1>
-		<small>{{$post->date}}</small>
-		<div class="blog-short-container">{!!$post->body!!}</div>
+		<div class="post">
+			<h3>{{$post->title}}</h3>
+			<div class="subtitle-container">
+				<p class="subtitle-italics">{{$post->created_at->format('M. d, Y')}}</p> <p class="subtitle-bar"> |</p> <p class="subtitle">2 comments</p>
+			</div>
+			<img class="image-attachment" src="/storage/image_attachments/{{$post->image_attachment}}">
+			<div class="blog-short-container">{!!$post->body!!}</div>
+		</div>
 		@auth
 				<a href="/posts/{{$post->id}}/edit" class="btn btn-outline-dark">Edit</a>
 				<div class="btn-container">

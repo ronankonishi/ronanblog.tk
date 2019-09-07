@@ -350,6 +350,16 @@ a.btn:hover {
 	display: block;
 }
 
+
+.image-attachment {
+	width: 95%;
+}
+
+.home .image-attachment {
+	width: 95%;
+}
+
+
 .footer-wrapper {
     background-color: #F5F5F5;
 }

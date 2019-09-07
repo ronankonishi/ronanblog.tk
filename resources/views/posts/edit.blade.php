@@ -2,7 +2,7 @@
 
 @section('content')
 	<h1>Edit Post</h1>
-		{{Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'POST'])}}
+		{{Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'POST', 'enctype' => 'multipart/form-data'])}}
 
 				{{ csrf_field() }}
 
@@ -13,6 +13,8 @@
 				{{Form::textarea('body', $post->body, ['placeholder' => 'Enter text...', 'id' => 'article-ckeditor'])}}
 
 				{{Form::hidden('_method', 'PUT')}}
+
+				{{Form::file('image_attachment')}}
 
 				<br>
 				{{Form::submit('Submit', ['class' => 'submit-btn'])}}

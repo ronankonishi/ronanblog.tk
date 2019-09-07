@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
 
 class PostsController extends Controller
@@ -45,12 +46,35 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'image_attachment' => 'image|nullable|max:1999'
         ]);
+
+        //Handle File Uploading
+        if($request->hasFile('image_attachment')) {
+            // Get filename w/ extension
+            $filenameWithExt = $request->file('image_attachment')->getClientOriginalName();
+
+            // Get filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            // Get ext
+            $extension = $request->file('image_attachment')->getClientOriginalExtension();
+
+            // Filename to store
+            $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+            // Upload img
+            $path = $request->file('image_attachment')->storeAs('public/image_attachments', $filenameToStore);
+
+        } else {
+            $filenameToStore = 'noimage.jpg';
+        }
 
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->image_attachment = $filenameToStore;
         $post->save();
 
         return redirect('/posts')->with('success', 'Post submitted');
@@ -93,12 +117,37 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'image_attachment' => 'image|nullable|max:1999'
         ]);
-        
+
         $post = Post::find($id);
+
+        //Handle File Uploading
+        if($request->hasFile('image_attachment')) {
+            // Get filename w/ extension
+            $filenameWithExt = $request->file('image_attachment')->getClientOriginalName();
+
+            // Get filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            // Get ext
+            $extension = $request->file('image_attachment')->getClientOriginalExtension();
+
+            // Filename to store
+            $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+            // Upload img
+            $path = $request->file('image_attachment')->storeAs('public/image_attachments', $filenameToStore);
+
+            Storage::delete('public/image_attachments/'.$post->image_attachment);
+        }
+        
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        if($request->hasFile('image_attachment')) {
+            $post->image_attachment = $filenameToStore;
+        }
         $post->save();
 
         return redirect('/posts')->with('success', 'Post Updated');
@@ -114,6 +163,10 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
+
+        if($post->image_attachment != 'noimage.jpg') {
+            Storage::delete('public/image_attachments/'.$post->image_attachment);
+        }
 
         return redirect('/posts')->with('success', 'Post Removed');
     }
