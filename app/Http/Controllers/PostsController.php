@@ -141,13 +141,12 @@ class PostsController extends Controller
             $path = $request->file('image_attachment')->storeAs('public/image_attachments', $filenameToStore);
 
             Storage::delete('public/image_attachments/'.$post->image_attachment);
+
+            $post->image_attachment = $filenameToStore;
         }
         
         $post->title = $request->input('title');
         $post->body = $request->input('body');
-        if($request->hasFile('image_attachment')) {
-            $post->image_attachment = $filenameToStore;
-        }
         $post->save();
 
         return redirect('/posts')->with('success', 'Post Updated');

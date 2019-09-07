@@ -31,28 +31,57 @@
 		<h5>Software Projects:</h5>
 		<hr>
 		<div class="content">
-			<a href="">
-				<div class="project" onmouseover="growParagraph()" onmouseout="shrinkParagraph()" style="background-color: blue;">
-				<img src="img/back.jpg">
-				<p class="description"><b>2018-2019</b><br>Tricorder database for competition</p>
-				<p class="project-title">Tricorder</p>
-
-				</div>
-			</a>
+			@if($s_projects->count() > 0)
+				@foreach ($s_projects as $project)
+					<a href="/projects/{{$project->id}}">
+						<div class="project" onmouseover="growParagraph()" onmouseout="shrinkParagraph()" style="background-color: blue;">
+						<img src="/storage/image_attachments/{{$project->image_attachment}}">
+						<p class="description"><b>{{$project->start_date}} - {{$project->end_date}}</b><br>{{$project->description}}</p>
+						<p class="project-title">{{$project->title}}</p>
+						</div>
+					</a>
+				@endforeach
+			@else
+				<p>Soon to Come...</p>
+			@endif
 		</div>
 		<br>
 
 		<h5>Engineering Projects:</h5>
 		<hr>
 		<div class="content">
-			<p>Soon to Come...</p>
+			@if($e_projects->count() > 0)
+				@foreach ($e_projects as $project)
+					<a href="/projects/{{$project->id}}">
+						<div class="project" onmouseover="growParagraph()" onmouseout="shrinkParagraph()" style="background-color: blue;">
+						<img src="/storage/image_attachments/{{$project->image_attachment}}">
+						<p class="description"><b>{{$project->start_date}} - {{$project->end_date}}</b><br>{{$project->description}}</p>
+						<p class="project-title">{{$project->title}}</p>
+						</div>
+					</a>
+				@endforeach
+			@else
+				<p>Soon to Come...</p>
+			@endif
 		</div>
 		<br>
 
 		<h5>Academic Research:</h5>
 		<hr>
 		<div class="content">
-			<p>Soon to Come...</p>
+			@if($r_projects->count() > 0)
+				@foreach ($r_projects as $project)
+					<a href="/projects/{{$project->id}}">
+						<div class="project" onmouseover="growParagraph()" onmouseout="shrinkParagraph()" style="background-color: blue;">
+						<img src="/storage/image_attachments/{{$project->image_attachment}}">
+						<p class="description"><b>{{$project->start_date}} - {{$project->end_date}}</b><br>{{$project->description}}</p>
+						<p class="project-title">{{$project->title}}</p>
+						</div>
+					</a>
+				@endforeach
+			@else
+				<p>Soon to Come...</p>
+			@endif
 		</div>
 		<br>
 	</div>
