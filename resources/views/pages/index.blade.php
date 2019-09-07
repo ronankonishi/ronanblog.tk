@@ -13,7 +13,7 @@
 							<p class="subtitle-italics">{{$post->created_at->format('M. d, Y')}}</p> <p class="subtitle-bar"> |</p> <p class="subtitle">2 comments</p>
 						</div>
 						<img class="image-attachment" src="/storage/image_attachments/{{$post->image_attachment}}">
-						@if(strlen($post->body) > 200)
+						@if(strlen($post->body) > 330)
 							<div class="blog-short-container">{!! preg_replace('/\s+?(\S+)?$/', '', substr($post->body, 0, 330)) !!} . . .</div>
 						@else
 							<div class="blog-short-container">{!! $post->body !!}</div>
@@ -34,6 +34,20 @@
 			<div>
 				<h5>Portfolio Project:</h5>	
 				<hr>
+				<div class="post">
+					@if(isset($project))
+						<h3><a href="projects/{{$project->id}}">{{$project->title}}</a></h3>
+						<div class="subtitle-container">
+							<p class="subtitle-italics">{{$project->start_date}} - {{$project->end_date}}</p>
+						</div>
+						<img class="image-attachment" src="/storage/image_attachments/{{$project->image_attachment}}">
+						@if(strlen($project->body) > 100)
+							<div class="blog-short-container">{!! preg_replace('/\s+?(\S+)?$/', '', substr($project->body, 0, 100)) !!} . . .</div>
+						@else
+							<div class="blog-short-container">{!! $project->body !!}</div>
+						@endif
+					@endif
+				</div>
 				<p></p>
 			</div>
 		</div>

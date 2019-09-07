@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 use App\Mail\ContactEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Post;
-
+use App\Project;
 
 class PagesController extends Controller
 {
     function index() {
     	$title = 'Welcome';
         $post = Post::inRandomOrder()->get()->first();
-    	return view('pages.index', compact('title', 'post'));
+        $project = Project::inRandomOrder()->get()->first();
+    	return view('pages.index', compact('title', 'post', 'project'));
     }
 
     function blog() {

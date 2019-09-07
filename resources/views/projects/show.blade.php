@@ -5,7 +5,7 @@
 		<a href="/projects" class="btn btn-outline-secondary btn-sm">&lt</a>
 		<br>
 		<br>
-		<div class="posts">
+		<div class="post">
 			<h3>{{$project->title}}</h3>
 			<div class="subtitle-container">
 				<p class="subtitle-italics">{{$project->start_date}} - {{$project->end_date}}</p> <p class="subtitle-bar"> |</p> <p class="subtitle">2 comments</p>

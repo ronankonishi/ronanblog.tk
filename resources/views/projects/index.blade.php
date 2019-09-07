@@ -34,10 +34,10 @@
 			@if($s_projects->count() > 0)
 				@foreach ($s_projects as $project)
 					<a href="/projects/{{$project->id}}">
-						<div class="project" onmouseover="growParagraph()" onmouseout="shrinkParagraph()" style="background-color: blue;">
-						<img src="/storage/image_attachments/{{$project->image_attachment}}">
-						<p class="description"><b>{{$project->start_date}} - {{$project->end_date}}</b><br>{{$project->description}}</p>
-						<p class="project-title">{{$project->title}}</p>
+						<div class="project" onmouseover="growParagraph({{$project->id}})" onmouseout="shrinkParagraph({{$project->id}})" style="background-color: blue;">
+							<img src="/storage/image_attachments/{{$project->image_attachment}}">
+							<p class="description description-{{$project->id}}"><b>{{$project->start_date}} - {{$project->end_date}}</b><br>{{$project->description}}</p>
+							<p class="project-title">{{$project->title}}</p>
 						</div>
 					</a>
 				@endforeach
@@ -53,10 +53,10 @@
 			@if($e_projects->count() > 0)
 				@foreach ($e_projects as $project)
 					<a href="/projects/{{$project->id}}">
-						<div class="project" onmouseover="growParagraph()" onmouseout="shrinkParagraph()" style="background-color: blue;">
-						<img src="/storage/image_attachments/{{$project->image_attachment}}">
-						<p class="description"><b>{{$project->start_date}} - {{$project->end_date}}</b><br>{{$project->description}}</p>
-						<p class="project-title">{{$project->title}}</p>
+						<div class="project" onmouseover="growParagraph({{$project->id}})" onmouseout="shrinkParagraph({{$project->id}})" style="background-color: blue;">
+							<img src="/storage/image_attachments/{{$project->image_attachment}}">
+							<p class="description description-{{$project->id}}"><b>{{$project->start_date}} - {{$project->end_date}}</b><br>{{$project->description}}</p>
+							<p class="project-title">{{$project->title}}</p>
 						</div>
 					</a>
 				@endforeach
@@ -72,10 +72,10 @@
 			@if($r_projects->count() > 0)
 				@foreach ($r_projects as $project)
 					<a href="/projects/{{$project->id}}">
-						<div class="project" onmouseover="growParagraph()" onmouseout="shrinkParagraph()" style="background-color: blue;">
-						<img src="/storage/image_attachments/{{$project->image_attachment}}">
-						<p class="description"><b>{{$project->start_date}} - {{$project->end_date}}</b><br>{{$project->description}}</p>
-						<p class="project-title">{{$project->title}}</p>
+						<div class="project" onmouseover="growParagraph({{$project->id}})" onmouseout="shrinkParagraph({{$project->id}})" style="background-color: blue;">
+							<img src="/storage/image_attachments/{{$project->image_attachment}}">
+							<p class="description description-{{$project->id}}"><b>{{$project->start_date}} - {{$project->end_date}}</b><br>{{$project->description}}</p>
+							<p class="project-title">{{$project->title}}</p>
 						</div>
 					</a>
 				@endforeach

@@ -1,9 +1,9 @@
-function growParagraph() {
-	var para = document.querySelector(".description");
+function growParagraph(id) {
+	var para = document.querySelector(".description-" + id);
 	para.style.height = para.scrollHeight + "px";
 }
 
-function shrinkParagraph() {
-	var para = document.querySelector(".description");
+function shrinkParagraph(id) {
+	var para = document.querySelector(".description-" + id);
 	para.style.height = 0;
 }

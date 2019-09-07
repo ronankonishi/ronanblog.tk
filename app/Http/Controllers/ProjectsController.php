@@ -55,7 +55,7 @@ class ProjectsController extends Controller
 
         // Handle File Uploading
         if ($request->hasFile('image_attachment')) {
-            // Get filename w/ ext
+            // Get filename w/ extension
             $filenameWithExt = $request->file('image_attachment')->getClientOriginalName();
 
             // Get filename
@@ -67,8 +67,8 @@ class ProjectsController extends Controller
             // Filename to store
             $filenameToStore = $filename.'_'.time().'.'.$extension;
 
-            // Upload image
-            $path = $request->file('image_attachment')->storeAs('public/image_attachment', $filenameToStore);
+            // Upload img
+            $path = $request->file('image_attachment')->storeAs('public/image_attachments', $filenameToStore);
 
         } else {
             $filenameToStore = 'noimage.jpg';
