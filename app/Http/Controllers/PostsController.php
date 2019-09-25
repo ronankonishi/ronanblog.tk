@@ -21,9 +21,9 @@ class PostsController extends Controller
     public function index()
     {
         $title = 'Blog';
-        $posts_per_page = 5;
+        $posts_per_page = 5; // pagination
         $posts = Post::orderBy('created_at', 'desc')->paginate($posts_per_page);
-        return view('posts.index')->with('posts', $posts)->with('title', $title);
+        return view('posts.index', compact('posts', 'title'));
     }
 
     /**
@@ -90,8 +90,7 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $title = 'Blog';
-
-        return view('posts.show')->with('post', $post)->with('title', $title);
+        return view('posts.show', compact('post', 'title'));
     }
 
     /**

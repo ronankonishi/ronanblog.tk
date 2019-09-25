@@ -5,7 +5,7 @@
 		<h5>Resume:</h5>
 		<hr>
 		<div class="content">
-			<p><a href="RESUME.pdf">Download my Resume</a></p>
+			<p><a class="resume" href="RESUME.pdf">Download my Resume</a></p>
 		</div>
 		<br>
 
@@ -26,6 +26,14 @@
 			<p>MATH 18. Linear Algebra (in progress)</p>
 		</div>
 		<br>
+
+		@auth
+			<hr>
+				<div class="create">
+					<a class="btn btn-dark" href="projects/create">Create</a>
+				</div>
+			<hr><br>
+		@endauth
 
 
 		<h5>Software Projects:</h5>

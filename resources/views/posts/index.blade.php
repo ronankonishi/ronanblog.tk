@@ -2,6 +2,14 @@
 
 @section('content')
 	<div class="main posts">
+		@auth
+			<hr>
+				<div class="create">
+					<a class="btn btn-dark" href="posts/create">Create</a>
+				</div>
+			<hr><br>
+		@endauth
+
 		@if(count($posts) > 0)
 			@foreach($posts as $post)
 				<div class="post">
