@@ -231,10 +231,10 @@ a.btn:hover {
 	padding-bottom: 10px;
 }
 
-.home .image-attachment {
-	width: 95%;
+.home .post .image-attachment {
+	width: 100%;
+	height: 120px;
 }
-
 
 /*Portfolio*/
 .portfolio a.resume {
@@ -326,6 +326,11 @@ a.btn:hover {
 /*Posts*/
 .posts .post {
 	padding: 10px 30px;
+}
+
+.posts .post .image-attachment {
+	width: 100%;
+	height: 200px;
 }
 
 .posts .pagination {
