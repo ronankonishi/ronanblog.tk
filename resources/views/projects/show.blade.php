@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-	<div class="main">
+	<div class="main portfolio">
 		<a href="/projects" class="btn btn-outline-secondary btn-sm">&lt</a>
 		<br>
 		<br>
