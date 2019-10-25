@@ -1,4 +1,8 @@
-@extends('layouts.api')
+@extends('layouts.base')
+
+@section('header')
+	@include('inc.navbar')
+@endsection
 
 @section('content')
 	<h1>Create Project</h1>

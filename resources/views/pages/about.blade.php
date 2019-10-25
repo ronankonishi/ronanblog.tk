@@ -1,5 +1,10 @@
 @extends('layouts.base')
 
+@section('header')
+	@include('inc.navbar')
+	@include('inc.banner')
+@endsection
+
 @section('content')
 	<div class="main about">
 		<div class="profile-container">

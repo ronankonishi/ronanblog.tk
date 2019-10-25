@@ -1,5 +1,5 @@
 <div class="logo">
-	<h1><a href="/">RonanBlog.com</a></h1>
+	<h1><a href="/">RonanBlog.tk</a></h1>
 </div>
 <ul>
     @auth
