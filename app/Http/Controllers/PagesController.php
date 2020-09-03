@@ -40,8 +40,10 @@ class PagesController extends Controller
             'subject' => $request->input('subject'),
             'message' => $request->input('message')
         ];
-
+        
         Mail::send(new ContactEmail($email));
+
+
         return back()->with('success', 'Thanks for contacting us!');
     }
 
